@@ -38,15 +38,15 @@ button{
 }
 
 
-#B1:active {
+#B1:active, #B1.lit{
     background:green;
 }
-#B2:active {
+#B2:active, #B2.lit {
     background:blue;
 }
-#B3:active {
+#B3:active, #B3.lit {
     background:red;
 }
-#B4:active {
+#B4:active, #B4.lit {
     background:yellow;
 }

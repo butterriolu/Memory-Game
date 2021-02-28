@@ -9,5 +9,44 @@ body {
 
 h1 {
   font-style: italic;
-  color: #373fff;//yes
+  color: #373fff;
+  font-family: verdana, arial, sans-serif; 
+}
+button{
+  padding: 10px;
+  border-radius: 10px;
+}
+#gameButtonArea > button {
+  width:200px;
+  height:200px;
+  margin:2px;
+}
+.hidden {
+  display: none;
+}
+#B1 {
+    background: lightgreen;
+}
+#B2 {
+    background: lightblue;
+}
+#B3 {
+    background: pink;
+}
+#B4 {
+    background: lightyellow;
+}
+
+
+#B1:active {
+    background:green;
+}
+#B2:active {
+    background:blue;
+}
+#B3:active {
+    background:red;
+}
+#B4:active {
+    background:yellow;
 }

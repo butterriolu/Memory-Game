@@ -7,13 +7,13 @@ function startGame(){
     gamePlaying = true;
   // swap the Start and Stop buttons
   document.getElementById("startBtn").classList.add("hidden");
-  document.getElementById("stopBtn").classList.remove("hidden");
+  document.getElementById("endBtn").classList.remove("hidden");
 }
 function stopGame(){
     //initialize game variables
     gamePlaying = false;
   // swap the Start and Stop buttons
   document.getElementById("startBtn").classList.remove("hidden");
-  document.getElementById("stopBtn").classList.add("hidden");
+  document.getElementById("endBtn").classList.add("hidden");
 }
 

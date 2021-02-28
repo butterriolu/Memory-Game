@@ -6,6 +6,6 @@ function startGame(){
     progress = 0;
     gamePlaying = true;
   // swap the Start and Stop buttons
-document.getElementById("startBtn").classList.add("hidden");
-document.getElementById("stopBtn").classList.remove("hidden");
+  document.getElementById("startBtn").classList.add("hidden");
+  document.getElementById("stopBtn").classList.remove("hidden");
 }

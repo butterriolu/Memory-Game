@@ -1,8 +1,13 @@
+const clueHoldTIme=1000; //clue play duration
+const cluePauseTime=333; //pause btwn clues
+const nextClueWaitTime=1000; //time before playback
+
 var pattern = [2, 2, 4, 3, 2, 1, 2, 4];
 var progress = 0; 
 var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5; 
+
 function startGame(){
     //initialize game variables
     progress = 0;
@@ -11,6 +16,7 @@ function startGame(){
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("endBtn").classList.remove("hidden");
 }
+
 function stopGame(){
     //initialize game variables
     gamePlaying = false;
@@ -26,6 +32,7 @@ const freqMap = {
   3: 392,
   4: 466.2
 }
+
 function playTone(btn,len){ 
   o.frequency.value = freqMap[btn]
   g.gain.setTargetAtTime(volume,context.currentTime + 0.05,0.025)
@@ -34,6 +41,7 @@ function playTone(btn,len){
     stopTone()
   },len)
 }
+
 function startTone(btn){
   if(!tonePlaying){
     o.frequency.value = freqMap[btn]
@@ -41,6 +49,7 @@ function startTone(btn){
     tonePlaying = true
   }
 }
+
 function stopTone(){
     g.gain.setTargetAtTime(0,context.currentTime + 0.05,0.025)
     tonePlaying = false
@@ -61,4 +70,21 @@ function lightButton(btn){
 }
 function clearButton(btn){
   document.getElementById("button"+btn).classList.remove("lit")
+}
+
+function playSingleClue(btn){
+  if(gamePlaying){
+    lightButton(btn);
+    playTone(btn,clueHoldTime);
+    setTimeout(clearButton,clueHoldTime,btn);
+  }
+}
+function playClueSequence(){
+  let delay= nextClueWaitTime;// delay= inital wait
+  for (let i=0;i<=progress;i++){
+    console.log("play single clue: "+ pattern[i]+" in "+delay +"ms")//plays clue dependent of progress
+    setTimeout(playSingleClue,delay,pattern[i])//set timeout for clue playback
+    delay+=clueHoldTIme;
+    delay+=cluePauseTime;
+  }
 }

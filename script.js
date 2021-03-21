@@ -97,6 +97,7 @@ function guess(btn){
   if(!gamePlaying){
     return;
   }
+  guessC+=1;
   // add game logic here
 }
 

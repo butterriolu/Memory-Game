@@ -24,16 +24,16 @@ button{
 .hidden {
   display: none;
 }
-#B1 {
+#button1 {
     background: lightgreen;
 }
-#B2 {
+#button2 {
     background: lightblue;
 }
-#B3 {
+#button3 {
     background: pink;
 }
-#B4 {
+#button4 {
     background: lightyellow;
 }
 

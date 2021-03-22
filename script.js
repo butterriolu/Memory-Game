@@ -109,6 +109,9 @@ function guess(btn){
         playClueSequence();
       }
     }
+    else{
+      
+    }
     
     
   }

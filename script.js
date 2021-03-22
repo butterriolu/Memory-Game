@@ -1,6 +1,6 @@
-const clueHoldTime=1000; //clue play duration
-const cluePauseTime=333; //pause btwn clues
-const nextClueWaitTime=1000; //time before playback
+const clueHoldTime=100; //clue play duration
+const cluePauseTime=300; //pause btwn clues
+const nextClueWaitTime=800; //time before playback
 
 var pattern = [2, 2, 4, 3, 2, 1, 2, 4];
 var progress = 0; 
@@ -109,11 +109,12 @@ function guess(btn){
         playClueSequence();
       }
     }
-    else{
-      
+    else{//pass, go next
+      guessC++;
     }
-    
-    
+  }
+  else{
+    loseGame();
   }
 }
 

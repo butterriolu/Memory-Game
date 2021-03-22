@@ -99,11 +99,18 @@ function guess(btn){
   }
   // add game logic here
   if(btn==pattern[guessC]){//correct guess
+    
     if(progress==guessC){//turn over
       if(progress==pattern.length-1){//last guess
         winGame();
       }
+      else{//not over
+        progress++;
+        playClueSequence();
+      }
     }
+    
+    
   }
 }
 
